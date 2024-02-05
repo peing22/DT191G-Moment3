@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Library.Migrations
 {
     [DbContext(typeof(LibraryDbContext))]
-    [Migration("20240205092310_InitialCreate")]
+    [Migration("20240205100343_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -117,7 +117,7 @@ namespace Library.Migrations
                         .IsRequired();
 
                     b.HasOne("Library.Models.Borrower", "Borrower")
-                        .WithMany()
+                        .WithMany("Loans")
                         .HasForeignKey("BorrowerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -133,6 +133,11 @@ namespace Library.Migrations
                 });
 
             modelBuilder.Entity("Library.Models.Book", b =>
+                {
+                    b.Navigation("Loans");
+                });
+
+            modelBuilder.Entity("Library.Models.Borrower", b =>
                 {
                     b.Navigation("Loans");
                 });

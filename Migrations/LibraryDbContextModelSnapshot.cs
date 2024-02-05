@@ -114,7 +114,7 @@ namespace Library.Migrations
                         .IsRequired();
 
                     b.HasOne("Library.Models.Borrower", "Borrower")
-                        .WithMany()
+                        .WithMany("Loans")
                         .HasForeignKey("BorrowerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -130,6 +130,11 @@ namespace Library.Migrations
                 });
 
             modelBuilder.Entity("Library.Models.Book", b =>
+                {
+                    b.Navigation("Loans");
+                });
+
+            modelBuilder.Entity("Library.Models.Borrower", b =>
                 {
                     b.Navigation("Loans");
                 });
