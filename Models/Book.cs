@@ -17,11 +17,10 @@ public class Book
     [Display(Name = "Författare")]
     public int AuthorId { get; set; }
 
-    // Navigationsegenskap som representerar bokens författare
+    // Navigationsegenskap
     [Display(Name = "Författare")]
     public Author? Author { get; set; }
 
-    // Navigationsegenskap som representerar en lista av lån
-    // Används för att etablera relationen mellan boken och lånen
+    // Navigationsegenskap
     public List<Loan>? Loans { get; set; }
 }

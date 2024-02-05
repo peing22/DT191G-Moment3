@@ -13,7 +13,6 @@ public class Borrower
     [StringLength(30, MinimumLength = 2, ErrorMessage = "Namn måste anges med 2-30 tecken!")]
     public required string Name { get; set; }
 
-    // Navigationsegenskap som representerar en lista av lån
-    // Används för att etablera relationen mellan boken och lånen
+    // Navigationsegenskap
     public List<Loan>? Loans { get; set; }
 }

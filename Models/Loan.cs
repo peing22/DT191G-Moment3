@@ -11,7 +11,7 @@ public class Loan
     [Display(Name = "Låntagare")]
     public int BorrowerId { get; set; }
 
-    // Navigationsegenskap som representerar låntagaren för lånet
+    // Navigationsegenskap
     [Display(Name = "Låntagare")]
     public Borrower? Borrower { get; set; }
 
@@ -19,7 +19,7 @@ public class Loan
     [Display(Name = "Bok")]
     public int BookId { get; set; }
 
-    // Navigationsegenskap som representerar boken för lånet
+    // Navigationsegenskap
     [Display(Name = "Bok")]
     public Book? Book { get; set; }
 

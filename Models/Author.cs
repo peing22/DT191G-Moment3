@@ -13,7 +13,6 @@ public class Author
     [StringLength(30, MinimumLength = 2, ErrorMessage = "Namn måste anges med 2-30 tecken!")]
     public required string Name { get; set; }
 
-    // Navigationsegenskap som representerar en lista av böcker
-    // Används för att etablera relationen mellan författaren och böckerna
+    // Navigationsegenskap
     public List<Book>? Books { get; set; }
 }
